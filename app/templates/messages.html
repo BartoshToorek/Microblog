@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+
+{% block app_content %}
+    <h1>{{ _('Conversations') }}</h1>
+    {% for speaker in speakers %}
+        {% if speaker.username != current_user.username %}
+            {% include '_speaker.html' %}
+        {% endif %}
+    {% endfor %}
+{% endblock %}
